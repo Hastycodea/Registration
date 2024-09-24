@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Validation JS</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sign-up d-flex justify-content-center mt-4">
+            <form class="form" onsubmit="return validateForm()">
+                <p class="title">Register </p>
+                <p class="message">Signup now and get full access to our site. </p>
+                                
+                <input type="text" placeholder="Full name" class="input" id="fullName">
+                <span id="fullNameError" class="error"></span>
+                        
+                <input  placeholder="Email" type="" class="input" id="email">
+                <span id="emailError" class="error"></span>
+                
+                <input  placeholder="Password" type="password" class="input" id="password">
+                <span id="passwordError" class="error"></span>
+
+                <input  placeholder="Confirm password" type="password" class="input" id="confirmPassword">
+                <span id="confirmPasswordError" class="error"></span>
+
+
+                <input type="date" placeholder="Date of Birth" class="input" id="dob">
+                <div>
+                    <span class="error" id="dobError"></span>
+                </div>
+                
+                <div class="form-check">
+                    <input class="form-check-input" required="" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      I agree with the Terms & Conditions
+                    </label>
+                </div>
+                <button class="submit btn btn-primary" type="submit">Submit</button>
+
+                
+                <p class="signin">Already have an acount ? <a href="./login.html">Signin</a></p>
+            </form>
+        </div>
+    </div>
+    
+    
+
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</body>
+</html>
