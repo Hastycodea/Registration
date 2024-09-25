@@ -8,8 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var fullNameError = document.getElementById("fullNameError");
     var emailFeedback = document.getElementById("emailFeedback");
-    
 
+    var submitButton = document.getElementById('submitButton');
+
+    
     form.addEventListener("submit", function (event) {
         var fullName = document.getElementById("fullName").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
@@ -20,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         var email = emailInput.value;
         var password = passwordInput.value;
-
+        
         var isValid = true;
 
         if (fullName.length === 0) {
@@ -74,11 +76,15 @@ document.addEventListener("DOMContentLoaded", function () {
             isValid = false;
         }
 
-        // prevent submission if any validation fails
-        if (!isValid) {
+        if(isValid) {
+            submitButton.removeAttribute("disabled");
+        } else {
+            // prevent submission if any validation fails
             event.preventDefault();
         }
+
     });
+
 
 
 
