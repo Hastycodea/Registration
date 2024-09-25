@@ -42,12 +42,12 @@
     animation: pulse 1s linear infinite;
   }
   
-  .message, .signin, .error {
+  .message, .signin, .error, .valid  {
     color: rgba(88, 87, 87, 0.822);
     font-size: 14px;
   }
   
-  .signin, .error {
+  .signin{
     text-align: center;
   }
   
@@ -57,6 +57,10 @@
 
   .error {
     color: red;
+  }
+
+  .valid {
+    color: green;
   }
   
   .signin a:hover {
