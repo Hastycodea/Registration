@@ -116,3 +116,44 @@
       opacity: 0;
     }
   }
+
+  .indicator {
+    visibility: hidden;
+    height: 0;
+  }
+
+  .show-indicator{
+    visibility: visible;
+  }
+
+  .indicator .weak, .medium, .strong, .init-weak, .init-medium, .init-strong{
+    width: 100%;
+    border-radius: 12px;
+    height: 10px;
+    opacity: 75%;
+    margin: 0, 1rem;
+  }
+
+  .init-weak{
+    background-color: gray;
+  }
+
+  .init-medium{
+    background-color: gray;
+  }
+
+  .init-strong{
+    background-color: gray;
+  }
+
+  .weak{
+    background-color: red;
+  }
+
+  .medium{
+    background-color: orange;
+  }
+
+  .strong{
+    background-color: green;
+  }

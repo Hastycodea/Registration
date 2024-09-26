@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     var form = document.querySelector("form");
+    var indicator = document.getElementById('indicator');
 
     var emailInput = document.getElementById("email");
     var passwordInput = document.getElementById("password");
@@ -10,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
     var emailFeedback = document.getElementById("emailFeedback");
 
     var submitButton = document.getElementById('submitButton');
+
+    var weak = document.getElementById('weak');
+    var medium = document.getElementById('medium');
+    var strong = document.getElementById('strong');
 
     
     form.addEventListener("submit", function (event) {
@@ -97,8 +102,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const emailValue = emailInput.value;
         if (emailValue === "") {
             emailFeedback.innerText = "";
-
+            
         } else if (!emailRegex.test(emailValue)) {
+            weak.classList.remove('init-weak');
             emailFeedback.innerText = "Invalid email format";
             emailFeedback.classList.remove('valid');
             emailFeedback.classList.add('error');
@@ -110,23 +116,67 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
+    var weakPasswordRegex = /^[A-Za-z]{6,}$/;
+    var mediumPasswordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    var strongPasswordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
 
-    var passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
 
     // listening for password input in real time
     passwordInput.addEventListener("input", function () {
         const passwordValue = passwordInput.value;
 
-        if (passwordValue === "") {
-            passwordFeedback.innerText = "";
-        } else if (!passwordRegex.test(passwordValue)) {
+
+        if(passwordValue === '') {
+            passwordFeedback.innerText = '';
+            indicator.classList.remove('show-indicator');
+            weak.classList.add('init-weak');
+            weak.classList.remove('weak');
+
+            medium.classList.add('init-medium');
+            medium.classList.remove('medium');
+
+            strong.classList.add('init-strong');
+            strong.classList.remove('strong');
+
+        } else if(weakPasswordRegex.test(passwordValue)) {
+            weak.classList.remove('init-weak');
+            weak.classList.add('weak');
+
+            medium.classList.add('init-medium');
+            medium.classList.remove('medium');
+
+            indicator.classList.add('show-indicator');
             passwordFeedback.innerText = "Password must be 8+ characters, including an uppercase letter, number, and special character.";
             passwordFeedback.classList.remove('valid');
             passwordFeedback.classList.add('error');
-        } else {
+        } else if(mediumPasswordRegex.test(passwordValue)) {
+            weak.classList.remove('init-weak');
+            weak.classList.add('weak');
+
+            strong.classList.add('init-strong');
+            strong.classList.remove('strong');
+
+            medium.classList.remove('init-medium');
+            medium.classList.add('medium');
+            indicator.classList.add('show-indicator');
+            passwordFeedback.innerText = "Password must be 8+ characters, including an uppercase letter, number, and special character.";
+            passwordFeedback.classList.remove('valid');
+            passwordFeedback.classList.add('error');
+        } else if(strongPasswordRegex.test(passwordValue)) {
+            weak.classList.remove('init-weak');
+            weak.classList.add('weak');
+            medium.classList.remove('init-medium');
+            medium.classList.add('medium');
+            strong.classList.remove('init-strong');
+            strong.classList.add('strong');
+            indicator.classList.add('show-indicator');
             passwordFeedback.innerText = "valid password";
             passwordFeedback.classList.remove('error');
             passwordFeedback.classList.add('valid');
+        } else {
+            passwordFeedback.innerText = "Password must be 8+ characters, including an uppercase letter, number, and special character.";
+            indicator.classList.add('show-indicator');
+
         }
 
     });

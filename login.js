@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var emailFeedback = document.getElementById('emailFeedback');
     var passwordFeedback = document.getElementById('passwordFeedback');
 
+    var submitButton = document.getElementById('submitButton')
+
     form.addEventListener('submit', function (event) {
         var email = emailInput.value;
         var password = passwordInput.value;
