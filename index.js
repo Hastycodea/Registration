@@ -162,6 +162,7 @@ document.addEventListener("DOMContentLoaded", function () {
             passwordFeedback.innerText = "Password must be 8+ characters, including an uppercase letter, number, and special character.";
             passwordFeedback.classList.remove('valid');
             passwordFeedback.classList.add('error');
+            
         } else if(strongPasswordRegex.test(passwordValue)) {
             weak.classList.remove('init-weak');
             weak.classList.add('weak');
