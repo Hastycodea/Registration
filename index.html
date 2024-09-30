@@ -11,45 +11,49 @@
 
     <div class="container">
         <div class="sign-up d-flex justify-content-center mt-4">
-            <form class="form" onsubmit="return validateForm()">
-                <p class="title">Register </p>
-                <p class="message">Signup now and get full access to our site. </p>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <form class="form" onsubmit="return validateForm()">
+                        <p class="title">Register </p>
+                        <p class="message">Signup now and get full access to our site. </p>
+                                        
+                        <input type="text" placeholder="Full name" class="input" id="fullName">
+                        <span id="fullNameError" class="error"></span>
                                 
-                <input type="text" placeholder="Full name" class="input" id="fullName">
-                <span id="fullNameError" class="error"></span>
+                        <input  placeholder="Email" type="" class="input" id="email">
+                        <span id="emailFeedback" class="error"></span>
                         
-                <input  placeholder="Email" type="" class="input" id="email">
-                <span id="emailFeedback" class="error"></span>
-                
-                <input  placeholder="Password" type="password" class="input" id="password">
-                <div class="indicator d-flex align-content-center justify-content-between gap-1" id="indicator">
-                    <span class="init-weak" id="weak"></span>
-                    <span class="init-medium" id="medium"></span>
-                    <span class="init-strong" id="strong"></span>
+                        <input  placeholder="Password" type="password" class="input" id="password">
+                        <div class="indicator d-flex align-content-center justify-content-between gap-1" id="indicator">
+                            <span class="init-weak" id="weak"></span>
+                            <span class="init-medium" id="medium"></span>
+                            <span class="init-strong" id="strong"></span>
+                        </div>
+                        
+                        <span id="passwordFeedback" class="error"></span>
+        
+                        <input  placeholder="Confirm password" type="password" class="input" id="confirmPassword">
+                        <span id="confirmPasswordError" class="error"></span>
+        
+        
+                        <input type="date" placeholder="Date of Birth" class="input" id="dob">
+                        <div>
+                            <span class="error" id="dobError"></span>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input class="form-check-input" required="" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              I agree with the Terms & Conditions
+                            </label>
+                        </div>
+                        <button id="submitButton" class="submit btn btn-primary" type="submit" >Submit</button>
+        
+                        
+                        <p class="signin">Already have an acount ? <a href="./login.html">Signin</a></p>
+                    </form>
                 </div>
-                
-                <span id="passwordFeedback" class="error"></span>
-
-                <input  placeholder="Confirm password" type="password" class="input" id="confirmPassword">
-                <span id="confirmPasswordError" class="error"></span>
-
-
-                <input type="date" placeholder="Date of Birth" class="input" id="dob">
-                <div>
-                    <span class="error" id="dobError"></span>
-                </div>
-                
-                <div class="form-check">
-                    <input class="form-check-input" required="" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1">
-                      I agree with the Terms & Conditions
-                    </label>
-                </div>
-                <button id="submitButton" class="submit btn btn-primary" type="submit" >Submit</button>
-
-                
-                <p class="signin">Already have an acount ? <a href="./login.html">Signin</a></p>
-            </form>
+            </div>
         </div>
     </div>
     
